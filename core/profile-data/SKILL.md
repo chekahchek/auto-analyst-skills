@@ -10,6 +10,7 @@ Analyse the dataset to deduce the type of data and the business domain. This wil
 ## Steps
 
 1. Sample the data by generating python code to inspect the column names, schema, and up to 5 rows of data. 
+Note that when you use tool `execute_python_script`, each callis isolated so variables do not persist between calls. You need to reimport libraries and redefine variables in each call.
 
 ```python
 df = pd.read_csv('<path_to_file>')
