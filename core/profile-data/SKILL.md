@@ -25,16 +25,19 @@ print(df.head(5))
 
 
 ## List of data types
-|     Data Type   | Description |
-|  -------------- | ----------- |
-| time-series     | Rows indexed by date/time. Analysis focuses on trends, seasonality, WoW/MoM/YoY comparisons, and forecasting. |
-| cross-sectional | Each row is an independent entity (customer, product, store) at a single point in time. Analysis focuses on distributions, segmentation, and ranking. |
-| panel           | Each entity appears across multiple time periods. Requires tracking the same individuals over time — train/test splits must respect entity boundaries. |
-| event-log       | Each row is an action or event (clicks, transactions, errors). Analysis focuses on funnels, session reconstruction, and time-to-event. |
-| free-text       | One or more columns contain natural language. Requires frequency analysis, topic modelling, and sentiment before any quantitative work.|
-| cohort          | Entities grouped by a shared start event (signup month, first purchase). Analysis focuses on retention curves and cohort-over-cohort comparison. |
-| relational      | Rows imply a parent-child structure (org chart, product category tree). Aggregations must respect the hierarchy to avoid double-counting. |
-| general         | Data that doesn't fit well into the above categories, or when the type is unclear. Analysis may require a more exploratory approach. |
+
+Pick the data type based on what the rows represent and how they relate to each other.
+
+| Data Type       | What it looks like | Examples |
+| --------------- | ------------------ | -------- |
+| time-series     | Rows are ordered by date/time and track the same metric(s) over time. | daily revenue; hourly sensor readings; monthly active users; stock prices |
+| cross-sectional | A snapshot of many entities at one point in time. Think "many entities, one time". | a one-time customer survey; a product catalogue; today's store sales |
+| panel           | The same entities measured repeatedly over time. Think "the same entities, many times". Needs an entity ID and a time column. | monthly sales per store; weekly user activity; quarterly employee scores |
+| event-log       | Each row is one action or event with a timestamp and an actor. | web clicks; transactions; error logs; support tickets |
+| free-text       | Important columns contain natural language (more than short labels). | product reviews; survey open answers; chat transcripts; articles |
+| cohort          | Entities can be grouped by when they started, so you can compare groups over time. | users who signed up in Jan and their retention; Q1 first-purchase customers |
+| relational      | Rows link to other rows in the same data, like a hierarchy. | org chart (employee → manager); category tree; bill of materials |
+| general         | The data does not clearly fit any of the above. | mixed or unclear spreadsheets |
 
 
 ## List of business domains
