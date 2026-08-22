@@ -1,11 +1,11 @@
 ---
 name: profile-data
-description: Profiles an uploaded dataset to infer type of data (e.g. Time series, free text etc.) as well as the business domain (e.g. finance, user-survey etc.)
+description: Profiles an uploaded dataset to infer its type of data (e.g. Time series, free text etc.)
 ---
 
 ## Overview
 
-Analyse the dataset to deduce the type of data and the business domain. This will help the agent load up relevant analytical skills, domain knowledge, and memories to better understand the data. 
+Analyse the dataset to deduce the type of data. This will help the agent load up relevant analytical skills and memories to better understand the data.
 
 ## Steps
 
@@ -20,8 +20,6 @@ print(df.head(5))
 ```
 
 2. Infer the type of data, available list of data types is shown in the next section. You can output more than 1 data type if the data fits multiple categories, but do not simply output all of them. Be as specific as possible, generate more code to deduce the type of data if needed. If it is really unclear, then return 'general' as the data type.
-
-3. Infer the business domain, available list of domains is shown in the next section. If it is really unclear, then return 'general' as the business domain.
 
 
 ## List of data types
@@ -40,15 +38,6 @@ Pick the data type based on what the rows represent and how they relate to each 
 | general         | The data does not clearly fit any of the above. | mixed or unclear spreadsheets |
 
 
-## List of business domains
-| Business Domain   | Description |
-| ----------------- | ----------- |
-| finance           | Data related to financial performance, accounting, revenue, costs, margins, etc. |
-| operations        | Data related to operational performance, supply chain, logistics, manufacturing, etc. |
-| growth            | Data related to user acquisition, marketing performance, conversion funnels, etc. |
-| hr                | Data related to human resources, employee performance, attrition, etc. |
-| general           | When the business domain is unclear or doesn't fit well into the above categories.
-
 ## Output Format
 When you have enough information, output a JSON object as your final message — no other text, no markdown fences:
-{"data_type": ["time-series", "cross-sectional"], "business_domain": "finance"}
+{"data_type": ["time-series", "cross-sectional"]}
