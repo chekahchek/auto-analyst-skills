@@ -1,7 +1,6 @@
 ---
 name: storytelling
-description: >
-  Use this skill whenever you have insights and charts from an analytical skill and need to
+description: Use this skill whenever you have insights and charts from an analytical skill and need to
   structure them into a coherent narrative for a data dashboard or storytelling report.
 ---
 

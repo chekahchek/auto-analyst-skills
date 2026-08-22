@@ -1,7 +1,6 @@
 ---
 name: panel
-description: >
-  Use when the dataset has repeated observations per entity over time (customers, stores, users, accounts, assets) — i.e. both a cross-sectional dimension and a time dimension
+description: Use when the dataset has repeated observations per entity over time (customers, stores, users, accounts, assets) — i.e. both a cross-sectional dimension and a time dimension
 ---
 
 # Panel Data EDA: Insight-Driven Exploration

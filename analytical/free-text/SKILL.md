@@ -1,7 +1,6 @@
 ---
 name: free-text
-description: >
-  Use when the dataset contains a free-text column (reviews, tickets, comments, survey open-ends, or any unstructured string field) and the user wants to understand what people are saying, why, and what it means.
+description: Use when the dataset contains a free-text column (reviews, tickets, comments, survey open-ends, or any unstructured string field) and the user wants to understand what people are saying, why, and what it means.
 ---
 
 # Free-Text EDA: Insight-Driven Exploration

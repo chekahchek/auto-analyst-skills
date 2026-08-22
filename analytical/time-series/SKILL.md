@@ -1,7 +1,6 @@
 ---
 name: time-series
-description: >
-  Use when the user asks for time-series analysis, trend exploration, seasonal patterns, or understanding how a metric changes over time.
+description: Use when the user asks for time-series analysis, trend exploration, seasonal patterns, or understanding how a metric changes over time.
 ---
 
 # Time-Series EDA: Insight-Driven Exploration

@@ -1,7 +1,6 @@
 ---
 name: general
-description: >
-  Use for general cross-sectional tabular data that doesn't fit a more specific lens — no dominant time dimension (time-series), no repeated entity-over-time structure (panel-data), and no free-text column to mine (free-text). One row per observation, a mix of numeric and categorical columns.
+description: Use for general cross-sectional tabular data that doesn't fit a more specific lens — no dominant time dimension (time-series), no repeated entity-over-time structure (panel-data), and no free-text column to mine (free-text). One row per observation, a mix of numeric and categorical columns.
 ---
 
 # Tabular EDA: Insight-Driven Exploration
