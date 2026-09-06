@@ -163,20 +163,8 @@ Return exactly one JSON object. Do not wrap it in markdown code blocks or add an
       "slide_number": 3,
       "title": "Oil prices and sales move in opposite directions",
       "contents": [
-        { "type": "text", "content": "As Ecuadorian oil prices fell from $98 to $43, store sales rose. The correlation is -0.63." },
+        { "type": "text", "content": "As Ecuadorian oil prices fell from $98 to $43, store sales rose. The correlation is -0.63." }
       ]
-    }
-  ],
-  "charts": [
-    {
-      "title": "Monthly Sales Trend (2013-2017)",
-      "description": "Overall upward trend with a sharp deceleration in 2017",
-      "figure": { /* Plotly figure JSON spec from input */ }
-    },
-    {
-      "title": "December Seasonality by Product Family",
-      "description": "FROZEN FOODS spikes 4.3x in December while SCHOOL SUPPLIES drops",
-      "figure": { /* Plotly figure JSON spec from input */ }
     }
   ]
 }
@@ -190,17 +178,13 @@ Return exactly one JSON object. Do not wrap it in markdown code blocks or add an
   - `title`: slide heading string
   - `contents`: array of content items, in the order they should appear on the slide. A slide can be text-only, chart-only, or a mix. Each item is one of:
     - `{ "type": "text", "content": "..." }` — a paragraph of narrative text
-    - `{ "type": "chart", "chart_index": 0 }` — Optional, references a chart by zero-based index into the top-level `charts` array
-- **`charts`** — array of chart objects if any are referenced in the slides, each containing:
-  - `title` — chart title string
-  - `description` — brief description of what the chart shows
-  - `figure` — the Plotly figure JSON spec (passed through from the analytical skill). Only include charts that are referenced by `chart_index` in the slides.
+    - `{ "type": "chart", "chart_index": 0 }` — Optional, references a chart by zero-based index into the *input* charts list (the charts provided alongside the insights)
 
 ### Rules
-- Every `chart_index` in `slides.contents` must point to a valid entry in the `charts` array.
-- The `charts` array should only contain charts actually used in the slides. Drop unused charts from the analytical input.
+- Every `chart_index` in `slides.contents` must point to a valid chart in the input charts list.
+- You may skip charts that don't advance the story — simply don't reference them.
 - A slide may contain zero charts. Text-only slides are valid and often appropriate for conclusions, methodology, or insights best conveyed through numbers alone.
-- Do not invent or alter the Plotly figure specs. Pass them through unchanged from the analytical skill.
+- Do NOT output a `charts` array or any `figure` data. The pipeline attaches the charts to the narrative for you; you only reference them by index.
 
 ---
 
